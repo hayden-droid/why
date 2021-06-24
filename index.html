@@ -1,6 +1,213 @@
 <html>
   <head>
+	  <style>
+	  body {
+    
+    display: flex;
+    
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: none;
+}
+
+p {
+    position: absolute;
+    color: #ace1af;
+    width: 260px;
+    font-size: 26px;
+    top: 5%;
+    right: 5%;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-size: 8em;
+    position: fixed;
+    mix-blend-mode: exclusion;
+    color: #1d1e22;
+    z-index: 1;
+}
+
+#cursor-custom {
+    height: 50px;
+    width: 50px;
+    pointer-events: none;
+    position: fixed;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff, 0 0 40px #fff, 0 0 70px #fff, 0 0 80px #fff, 0 0 100px #fff, 0 0 150px #fff;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
     <style>
+	    	* {
+  box-sizing: border-box;
+}
+
+strong {
+  font-weight: 700;
+}
+
+main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: center;
+  position: relative;
+  padding: 2em;
+  text-align: center;
+}
+main h1, main h3, main p {
+  flex: 100%;
+  max-width: 600px;
+}
+main h1 {
+  font: 700 40px/1.3 'Inconsolata', monospace;
+}
+main h3 {
+  font: 700 24px/1.3 'Inconsolata', monospace;
+  margin: .5em 0 1.8em;
+}
+
+a {
+  color: #1572b6;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.head {
+  position: fixed;
+  animation: 50s headpopping infinite;
+  top: 0;
+  left: 0;
+  transform: translateY(-50vh) rotate(180deg);
+}
+
+@keyframes headpopping {
+  3%, 8% {
+    transform: translateY(-50vh) rotate(180deg);
+  }
+  6% {
+    transform: translateY(0) rotate(180deg);
+  }
+  10% {
+    transform: translateY(-50vh) translateX(110vw) rotate(270deg);
+  }
+  12%, 20% {
+    transform: translateY(50vh) translateX(110vw) rotate(270deg);
+  }
+  15% {
+    transform: translateY(50vh) translateX(80vw) rotate(270deg);
+  }
+  22% {
+    transform: translateY(50vh) translateX(110vw) rotate(0);
+  }
+  24% {
+    transform: translateY(110vh) translateX(110vw) rotate(0);
+  }
+  26%, 30% {
+    transform: translateY(110vh) translateX(70vw) rotate(0);
+  }
+  28% {
+    transform: translateY(80vh) translateX(70vw) rotate(0);
+  }
+  32% {
+    transform: translateY(110vh) translateX(70vw) rotate(90deg);
+  }
+  34% {
+    transform: translateY(110vh) translateX(-50vw) rotate(90deg);
+  }
+  36%, 40% {
+    transform: translateY(30vh) translateX(-50vw) rotate(90deg);
+  }
+  38% {
+    transform: translateY(30vh) translateX(0) rotate(90deg);
+  }
+  42% {
+    transform: translateY(-45vh) translateX(-50vw) rotate(230deg);
+  }
+  44%, 48% {
+    transform: translateY(-45vh) translateX(100vw) rotate(230deg);
+  }
+  46% {
+    transform: translateY(-3vh) translateX(85vw) rotate(230deg);
+  }
+  50% {
+    transform: translateY(-45vh) translateX(100vw) rotate(180deg);
+  }
+  52%, 56% {
+    transform: translateY(-45vh) translateX(50vw) rotate(180deg);
+  }
+  54% {
+    transform: translateY(0) translateX(50vw) rotate(180deg);
+  }
+  58% {
+    transform: translateY(-45vh) translateX(-50vw) rotate(0);
+  }
+  60% {
+    transform: translateY(115vh) translateX(-50vw) rotate(0);
+  }
+  62%, 65% {
+    transform: translateY(75vh) translateX(0) rotate(0);
+  }
+  72% {
+    transform: translateY(85vh) translateX(53vw) rotate(0);
+  }
+  74% {
+    transform: translateY(110vh) translateX(53vw) rotate(0);
+  }
+  76% {
+    transform: translateY(110vh) translateX(53vw) rotate(90deg);
+  }
+  78% {
+    transform: translateY(110vh) translateX(-50vw) rotate(90deg);
+  }
+  80%, 88% {
+    transform: translateY(15vh) translateX(-50vw) rotate(90deg);
+  }
+  82% {
+    transform: translateY(15vh) translateX(0) rotate(90deg);
+  }
+  83% {
+    transform: translateY(15vh) translateX(0) rotate(98deg);
+  }
+  84% {
+    transform: translateY(15vh) translateX(0) rotate(83deg);
+  }
+  85% {
+    transform: translateY(15vh) translateX(0) rotate(92deg);
+  }
+  86% {
+    transform: translateY(15vh) translateX(0) rotate(87deg);
+  }
+  90% {
+    transform: translateY(15vh) translateX(-50vw) rotate(180deg);
+  }
+  92% {
+    transform: translateY(-50vh) translateX(-50vw) rotate(180deg);
+  }
+  94% {
+    transform: translateY(-50vh) translateX(0) rotate(180deg);
+  }
+}
+code {
+  display: inline-block;
+  padding: 1px 7px;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+</style>
       audio {
 				width: 150px;
 				height: 30px;
@@ -42,6 +249,611 @@
 }
       </style>
     <title>Hi why you here</title>
+	  <style>.item.footer {
+  flex-wrap: wrap;
+  padding: 5rem;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.7;
+  grid-column: span 1;
+}
+@media screen and (min-width: 823px) and (max-width: 1223px) {
+  .item.footer {
+    grid-column: span 2;
+  }
+}
+.item.footer a {
+  text-decoration: none;
+  color: #fff;
+  padding: 3px 0;
+  border-bottom: 1px dashed;
+}
+.item.footer a:hover {
+  border-bottom: 1px solid;
+}
+
+footer {
+  margin-top: 1.5rem;
+}
+footer a {
+  text-decoration: none;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: transparent;
+  border: 1px dashed #fff;
+  color: #fff;
+  margin: 5px;
+}
+footer a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+footer a .icons {
+  margin-top: 8px;
+  display: inline-block;
+  font-size: 20px;
+}
+footer a .icons:before {
+  position: relative;
+}
+
+* {
+  box-sizing: border-box;
+}
+*:before, *:after {
+  content: "";
+  position: absolute;
+}
+
+.main-content {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+}
+.main-content .item {
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+  flex-wrap: wrap;
+  background: var(--bg-color);
+}
+.main-content .item:not(.footer) {
+  padding-top: 1rem;
+}
+
+button {
+  background: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 50px;
+  padding: 0.8rem 2rem;
+  font: 24px "Margarine", sans-serif;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  transition: 0.2s ease-in-out;
+  letter-spacing: 2px;
+}
+
+.name {
+  width: 100%;
+  text-align: center;
+  padding: 0 0 3rem;
+  font: 500 14px 'Rubik', sans-serif;
+  letter-spacing: .5px;
+  text-transform: uppercase;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+}
+
+.button__wrapper {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 65px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-pulse button {
+  background: var(--bg-color);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.button-pulse .button__wrapper:hover .pulsing:before {
+  animation: pulsing 0.2s linear infinite;
+}
+.button-pulse .button__wrapper:hover .pulsing:after {
+  animation: pulsing1 0.2s linear infinite;
+}
+
+.pulsing {
+  width: 99%;
+  height: 99%;
+  border-radius: 50px;
+  z-index: 1;
+  position: relative;
+}
+.pulsing:before, .pulsing:after {
+  width: 100%;
+  height: 100%;
+  border: inherit;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  background: #fff;
+  border-radius: inherit;
+  animation: pulsing 2.5s linear infinite;
+}
+.pulsing:after {
+  animation: pulsing1 2.5s linear infinite;
+}
+
+@keyframes pulsing {
+  0% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+  20% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.2;
+    transform: scaleY(1.8) scaleX(1.4);
+  }
+  80% {
+    opacity: 0;
+    transform: scaleY(1.8) scaleX(1.4);
+  }
+  90% {
+    opacity: 0;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+@keyframes pulsing1 {
+  0% {
+    opacity: 1;
+    transform: scaleY(1) scaleX(1);
+  }
+  20% {
+    opacity: 0.5;
+  }
+  70% {
+    opacity: 0.2;
+    transform: scaleY(1.3) scaleX(1.15);
+  }
+  80% {
+    opacity: 0;
+    transform: scaleY(1.3) scaleX(1.15);
+  }
+  90% {
+    opacity: 0;
+    transform: scaleY(1) scaleX(1);
+  }
+}
+.button-typewriter button {
+  width: 100%;
+  height: 100%;
+}
+.button-typewriter p {
+  animation: typing 4s steps(12) infinite;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.button-typewriter .button__wrapper:hover p {
+  animation: blink 0.3s infinite;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  50% {
+    width: 100%;
+  }
+  55%,
+	65%,
+	75% {
+    opacity: 1;
+  }
+  60%,
+	70% {
+    opacity: 0;
+  }
+  80% {
+    width: 100%;
+  }
+  100% {
+    width: 0;
+  }
+}
+.button-parrot .parrot {
+  position: absolute;
+  width: 60px;
+  text-align: center;
+  animation: blink 0.8s infinite;
+  color: transparent;
+}
+.button-parrot .parrot:before {
+  content: "Click Me!";
+}
+.button-parrot .parrot:nth-child(1) {
+  top: -30px;
+  left: -40px;
+  font: 12px/1 "Margarine", sans-serif;
+  transform: rotate(-20deg);
+  animation-duration: 0.5s;
+}
+.button-parrot .parrot:nth-child(2) {
+  font: 12px/1 "Margarine", sans-serif;
+  right: -40px;
+  top: -20px;
+  transform: rotate(15deg);
+  animation-duration: 0.3s;
+}
+.button-parrot .parrot:nth-child(3) {
+  font: 16px/1 "Margarine", sans-serif;
+  top: -60px;
+  left: 15px;
+  transform: rotate(10deg);
+  animation-duration: 1s;
+}
+.button-parrot .parrot:nth-child(4) {
+  font: 18px/1 "Margarine", sans-serif;
+  top: -70px;
+  left: 95px;
+  transform: rotate(2deg);
+  animation-duration: 0.7s;
+}
+.button-parrot .parrot:nth-child(5) {
+  font: 14px/1 "Margarine", sans-serif;
+  top: 80px;
+  left: 105px;
+  transform: rotate(-20deg);
+  animation-duration: 0.8s;
+}
+.button-parrot .parrot:nth-child(6) {
+  font: 12px/1 "Margarine", sans-serif;
+  top: 80px;
+  left: 5px;
+  transform: rotate(10deg);
+  animation-duration: 1.2s;
+}
+.button-parrot button:hover .parrot:before {
+  content: "Do it!";
+  width: 70px;
+}
+
+@keyframes blink {
+  25%,
+	75% {
+    color: transparent;
+  }
+  40%,
+	60% {
+    color: #fff;
+  }
+}
+.button-hand button:before {
+  content: "👇";
+  font-size: 60px;
+  transform: scaleX(-1);
+  right: 0px;
+  top: -68px;
+  animation: up-down 1s infinite;
+}
+.button-hand button .hands:before, .button-hand button .hands:after {
+  content: "👇";
+  font-size: 40px;
+  opacity: 0;
+  transition: 0.4s ease-in-out;
+}
+.button-hand button .hands:before {
+  transform: rotate(-60deg);
+  left: -45px;
+  top: -10px;
+}
+.button-hand button .hands:after {
+  transform: rotate(170deg);
+  right: 30px;
+  top: 50px;
+}
+.button-hand button:hover .hands:before {
+  opacity: 1;
+  left: -35px;
+}
+.button-hand button:hover .hands:after {
+  opacity: 1;
+  top: 40px;
+}
+
+@keyframes up-down {
+  50% {
+    margin-top: -20px;
+  }
+}
+.button-100 .emoji {
+  position: absolute;
+  top: -45px;
+  left: 0;
+  width: 35px;
+  height: 35px;
+  overflow: hidden;
+}
+.button-100 .emoji:before {
+  content: "💯";
+  display: inline-block;
+  animation: give-score 2.5s infinite;
+  position: relative;
+  top: 0;
+}
+.button-100 .emoji:nth-child(2) {
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.button-100 .emoji:nth-child(2):before {
+  animation: give-score 2.5s infinite 0.2s;
+}
+.button-100 .emoji:nth-child(3) {
+  left: auto;
+  right: 0;
+}
+.button-100 .emoji:nth-child(3):before {
+  animation: give-score 2.5s infinite 0.4s;
+}
+.button-100 button:hover .emoji:before {
+  content: "👏";
+  transition: 0.5s ease;
+}
+
+@keyframes give-score {
+  30%,
+	80% {
+    top: 0;
+  }
+  40%,
+	70% {
+    top: 50px;
+  }
+}
+.button-pressure marquee {
+  position: absolute;
+  width: 90%;
+  top: 125%;
+  left: 5%;
+  font: 18px/1 "Margarine", sans-serif;
+}
+.button-pressure marquee span {
+  display: inline-block;
+  height: 20px;
+}
+.button-pressure marquee span:not(:last-child) {
+  margin-right: 130px;
+}
+.button-pressure button:before {
+  content: "OMG YAS";
+  transition: 0.5s ease;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -15px;
+  font-size: 12px;
+  opacity: 0;
+}
+.button-pressure button:hover:before {
+  animation: omg-yes 1s;
+}
+
+.button-rainbow button {
+  animation: rainbow 3s infinite, heartbeat 0.6s infinite;
+  background: #c0392b;
+}
+.button-rainbow button .rainbow {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: -40px;
+  transition: 0.5s ease;
+  opacity: 0;
+  transform: rotate(0);
+}
+.button-rainbow button .rainbow:before {
+  content: "🌈";
+  left: 0;
+}
+.button-rainbow button:hover .rainbow {
+  opacity: 1;
+  animation: rotate-nonstop 0.2s infinite;
+}
+.button-rainbow button + .name {
+  color: #444;
+}
+
+@keyframes rotate-nonstop {
+  50% {
+    transform: rotate(92deg);
+  }
+}
+@keyframes omg-yes {
+  50% {
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+  }
+}
+@keyframes rainbow {
+  0% {
+    background: #1abc9c;
+  }
+  10% {
+    background: #2ecc71;
+  }
+  20% {
+    background: #3498db;
+  }
+  30% {
+    background: #9b59b6;
+  }
+  40% {
+    background: #e74c3c;
+  }
+  50% {
+    background: #e67e22;
+  }
+  60% {
+    background: #f1c40f;
+  }
+  70% {
+    background: #2c3e50;
+  }
+  80% {
+    background: #9b59b6;
+  }
+}
+.button-jittery button {
+  animation: jittery 4s infinite;
+}
+.button-jittery button:hover {
+  animation: heartbeat 0.2s infinite;
+}
+
+@keyframes jittery {
+  5%,
+	50% {
+    transform: scale(1);
+  }
+  10% {
+    transform: scale(0.9);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  20% {
+    transform: scale(1.15) rotate(-5deg);
+  }
+  25% {
+    transform: scale(1.15) rotate(5deg);
+  }
+  30% {
+    transform: scale(1.15) rotate(-3deg);
+  }
+  35% {
+    transform: scale(1.15) rotate(2deg);
+  }
+  40% {
+    transform: scale(1.15) rotate(0);
+  }
+}
+@keyframes heartbeat {
+  50% {
+    transform: scale(1.1);
+  }
+}
+</style>
+
+
+	<script language="JavaScript1.2">
+
+//Pre-load your image below!
+grphcs=new Array(6)
+Image0=new Image();
+Image0.src=grphcs[0]="https://scontent.fman2-1.fna.fbcdn.net/v/t1.6435-0/s526x395/121477703_3991349337560484_9209032790697298891_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=174925&_nc_ohc=5T2_uLiwCT0AX-OHLdQ&_nc_ht=scontent.fman2-1.fna&tp=7&oh=9d51b5b6aa485a6d064ca42454e91bc0&oe=60D92BC1f";
+Image1=new Image();
+Image1.src=grphcs[1]="https://www.javascriptfreecode.com/images/barg.gif"
+Image2=new Image();
+Image2.src=grphcs[2]="https://www.javascriptfreecode.com/images/barg.gif"
+Image3=new Image();
+Image3.src=grphcs[3]="https://www.javascriptfreecode.com/images/barg.gif"
+Image4=new Image();
+Image4.src=grphcs[4]="https://www.javascriptfreecode.com/images/barg.gif"
+Image5=new Image();
+Image5.src=grphcs[5]="https://www.javascriptfreecode.com/images/barg.gif"
+
+Amount=8; //Smoothness depends on image file size, the smaller the size the more you can use!
+Ypos=new Array();
+Xpos=new Array();
+Speed=new Array();
+Step=new Array();
+Cstep=new Array();
+ns=(document.layers)?1:0;
+ns6=(document.getElementById&&!document.all)?1:0;
+
+if (ns){
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write("<LAYER NAME='sn"+i+"' LEFT=0 TOP=0><img src="+rndPic+"></LAYER>");
+}
+}
+else{
+document.write('<div style="position:absolute;top:0px;left:0px"><div style="position:relative">');
+for (i = 0; i < Amount; i++){
+var P=Math.floor(Math.random()*grphcs.length);
+rndPic=grphcs[P];
+document.write('<img id="si'+i+'" src="'+rndPic+'" style="position:absolute;top:0px;left:0px">');
+}
+document.write('</div></div>');
+}
+WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+for (i=0; i < Amount; i++){
+ Ypos[i] = Math.round(Math.random()*WinHeight);
+ Xpos[i] = Math.round(Math.random()*WinWidth);
+ Speed[i]= Math.random()*5+3;
+ Cstep[i]=0;
+ Step[i]=Math.random()*0.1+0.05;
+}
+function fall(){
+var WinHeight=(ns||ns6)?window.innerHeight:window.document.body.clientHeight;
+var WinWidth=(ns||ns6)?window.innerWidth-70:window.document.body.clientWidth;
+var hscrll=(ns||ns6)?window.pageYOffset:document.body.scrollTop;
+var wscrll=(ns||ns6)?window.pageXOffset:document.body.scrollLeft;
+for (i=0; i < Amount; i++){
+sy = Speed[i]*Math.sin(90*Math.PI/180);
+sx = Speed[i]*Math.cos(Cstep[i]);
+Ypos[i]+=sy;
+Xpos[i]+=sx;
+if (Ypos[i] > WinHeight){
+Ypos[i]=-60;
+Xpos[i]=Math.round(Math.random()*WinWidth);
+Speed[i]=Math.random()*5+3;
+}
+if (ns){
+document.layers['sn'+i].left=Xpos[i];
+document.layers['sn'+i].top=Ypos[i]+hscrll;
+}
+else if (ns6){
+document.getElementById("si"+i).style.left=Math.min(WinWidth,Xpos[i]);
+document.getElementById("si"+i).style.top=Ypos[i]+hscrll;
+}
+else{
+eval("document.all.si"+i).style.left=Xpos[i];
+eval("document.all.si"+i).style.top=Ypos[i]+hscrll;
+}
+Cstep[i]+=Step[i];
+}
+setTimeout('fall()',20);
+}
+
+window.onload=fall
+//-->
+</script>
+	
+	
     </head>
   <body>
     <div class='audio-container'>
@@ -82,5 +894,46 @@ var id = "glitch"
   
   
 <p><u>xjfygbhfdkzubhd</u></p>
-    </body>
+	  <br>
+	  <br>
+	  <br>
+	  <br>
+	  <p>hello i guess your still here lol</p>
+	  <p>have some buttons</p>
+	  
+	  <div class="main-content">
+	<div class="item button-jittery" style="--bg-color: #f1c40f;">
+	<button>Click Me!</button>
+</div>
+
+<div class="item button-hand" style="--bg-color: #3498db">
+<button>Click Me!
+<div class="hands"></div>
+</button>
+</div>
+
+
+</div>
+</div>
+
+<img class="head" src="https://scontent.fman2-1.fna.fbcdn.net/v/t1.6435-0/s526x395/121477703_3991349337560484_9209032790697298891_n.jpg?_nc_cat=105&ccb=1-3&_nc_sid=174925&_nc_ohc=5T2_uLiwCT0AX-OHLdQ&_nc_ht=scontent.fman2-1.fna&tp=7&oh=9d51b5b6aa485a6d064ca42454e91bc0&oe=60D92BC1" alt="Hi" />
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+
+
+
+    <div id="cursor-custom"></div>
+
+<script>
+const cursor = document.getElementById("cursor-custom"),
+    radius = cursor.offsetHeight / 2;
+
+document.addEventListener("mousemove", e => {
+    let top = e.clientY - radius,
+        left = e.clientX - radius;
+
+    cursor.style = `top: ${top}px; left: ${left}px`;
+});
+	</script>
+
+</body>
   </html>
