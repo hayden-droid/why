@@ -64,48 +64,7 @@ a {
 
       
       </style>
-    <title>LOL</title>
-    </head>
-  <body>
-    <script type="x-shader/x-vertex" id="vertexshader">
-
-  attribute float size;
-  attribute vec3 customColor;
-  varying vec3 vColor;
-
-  void main() {
-
-    vColor = customColor;
-    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-    gl_PointSize = size * ( 300.0 / -mvPosition.z );
-    gl_Position = projectionMatrix * mvPosition;
-
-  }
-
-</script>
-<script type="x-shader/x-fragment" id="fragmentshader">
-
- uniform vec3 color;
- uniform sampler2D pointTexture;
-
- varying vec3 vColor;
-
- void main() {
-
-   gl_FragColor = vec4( color * vColor, 1.0 );
-   gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-
- }
-</script>
-
-<div id="magic"></div>
-<div class="playground">
-  <div class="bottomPosition">
-    
-        <h1 class="special">By Hayden Drysdale <br><span class="minText"></span></h1>
-  </div>
-</div>
-    <script>
+	  <script>
       const preload = () => {
 
   let manager = new THREE.LoadingManager();
@@ -491,6 +450,48 @@ class CreateParticles {
 }
 
 </script>
+    <title>LOL</title>
+    </head>
+  <body>
+    <script type="x-shader/x-vertex" id="vertexshader">
+
+  attribute float size;
+  attribute vec3 customColor;
+  varying vec3 vColor;
+
+  void main() {
+
+    vColor = customColor;
+    vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+    gl_PointSize = size * ( 300.0 / -mvPosition.z );
+    gl_Position = projectionMatrix * mvPosition;
+
+  }
+
+</script>
+<script type="x-shader/x-fragment" id="fragmentshader">
+
+ uniform vec3 color;
+ uniform sampler2D pointTexture;
+
+ varying vec3 vColor;
+
+ void main() {
+
+   gl_FragColor = vec4( color * vColor, 1.0 );
+   gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+ }
+</script>
+
+<div id="magic"></div>
+<div class="playground">
+  <div class="bottomPosition">
+    
+        <h1 class="special">By Hayden Drysdale <br><span class="minText"></span></h1>
+  </div>
+</div>
+    
       <button><a href="index.html">go home</a></button>
     </body>
   </html>
