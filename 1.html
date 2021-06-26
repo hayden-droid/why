@@ -15,7 +15,32 @@ canvas {
 }
       </style>
     <title>LOL</title>
-    <script>
+   
+    </head>
+  
+  <body>
+    <!--
+
+very bad single thread performance.... 
+sorry AMD users - will fix that soon!!! :D
+
+-->
+<div>
+
+  <ul data-time="3000">
+    <li data-hue="20" >S</li>
+    <li data-hue="0" >h</li>
+    <li data-hue="197" >a</li>
+    <li data-hue="100" >n</li>
+    <li data-hue="45" >i</li>
+    <li data-hue="10" >c</li>
+    <li data-hue="75" >e</li>
+    
+  </ul>
+</div>
+<canvas></canvas>
+    <button><a href="index.html">go home</a></button>
+     <script>
       const newParticlesPerFrame = 50;
 
 const color = (hsl, o) => {
@@ -396,29 +421,5 @@ const a = new TextSparks();
 a.run();
 
       </script>
-    </head>
-  
-  <body>
-    <!--
-
-very bad single thread performance.... 
-sorry AMD users - will fix that soon!!! :D
-
--->
-<div>
-
-  <ul data-time="3000">
-    <li data-hue="20" >S</li>
-    <li data-hue="0" >h</li>
-    <li data-hue="197" >a</li>
-    <li data-hue="100" >n</li>
-    <li data-hue="45" >i</li>
-    <li data-hue="10" >c</li>
-    <li data-hue="75" >e</li>
-    
-  </ul>
-</div>
-<canvas></canvas>
-    <button><a href="index.html">go home</a></button>
     </body>
   </html>
